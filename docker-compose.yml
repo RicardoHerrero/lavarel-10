@@ -26,7 +26,8 @@ services:
      # db mysql ${DB_DATABASE} //Busca do arquivo .env
     mysql:
         container_name: banco-mysql
-        image: mysql:5.7.22
+        #image: mysql:5.7.22
+        image: mariadb:10.5.8
         restart: unless-stopped
         environment:
             MYSQL_DATABASE: ${DB_DATABASE}
