@@ -77,3 +77,10 @@
   .bd-mode-toggle {
     z-index: 1500;
   }
+
+  .input-busca{
+    border: 1px solid #99999957;
+    margin-bottom: 0.5em;
+    padding: 5px !important;
+    background-color: #99999905;
+  }
