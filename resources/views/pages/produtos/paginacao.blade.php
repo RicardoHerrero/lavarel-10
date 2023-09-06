@@ -18,7 +18,9 @@
         <div class="table-responsive mt-4">
 
             @if ( $findProduto->isEmpty() )
-              <p> Não localizado nenhum dado!</p>
+              <div class="alert alert-warning" role="alert">
+                Não localizado nenhum dado!
+              </div>
             @else
               <table class="table table-striped table-sm">
                 <thead>
@@ -36,7 +38,13 @@
                     <td>{{ 'R$ ' . number_format($produto->valor, 2, ',' ,'.') }}</td>
                     <td>
                       <a href="" class="btn btn-primary btn-sm">Editar</a>
-                      <a href="" class="btn btn-danger btn-sm">Excluir</a>
+                      
+                      <meta name="csrf-token" content="{{ csrf_token() }}"/>
+                      <a 
+                        onclick="deleteRegistroPaginacao('{{ route('produto.delete') }}', {{ $produto->id }} )" 
+                        class="btn btn-danger btn-sm">
+                        Excluir
+                      </a>
                     </td>
                   </tr>
                   @endforeach

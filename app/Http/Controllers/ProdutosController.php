@@ -19,4 +19,10 @@ class ProdutosController extends Controller
         //dd($findProduto);
         return view('pages.produtos.paginacao', compact('findProduto'));
     }
+    public function delete (Request $request){
+        $id = $request->id;
+        $buscaRegistro = Produtos::find($id);
+        $buscaRegistro->delete();
+        return response()->json(['success'=>true]);
+    }
 }
