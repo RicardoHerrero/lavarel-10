@@ -9,7 +9,7 @@
         <form action="{{ route('produto.index') }}" method="get" class="form-inline">
             <input type="text" class="form-control-plaintext form-control-lg input-busca" name="pesquisar" placeholder="Digite o nome para buscar" />
             <button class="btn btn-secondary">Pesquisar</button>
-            <a type="button" href="" class="btn btn-primary float-end">Cadastrar Produto</a>
+            <a type="button" href="{{ route('produto.cadastro') }}" class="btn btn-primary float-end">Cadastrar Produto</a>
         </form>
     </div>
     <div>
